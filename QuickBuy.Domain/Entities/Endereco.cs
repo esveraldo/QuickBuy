@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QuickBuy.Domain.Entities
 {
-    class Endereco
+    class Endereco : Entidade
     {
         public int Id { get; set; }
         public string Cep { get; set; }
@@ -16,5 +16,11 @@ namespace QuickBuy.Domain.Entities
         public int PedidoId { get; set; }
         public Pedido Pedido { get; set; }
 
+        public override void Validate()
+        {
+            LimparMensagemValidacao();
+
+            AdicionarCritica("Critica - O cep tem de ser preenchido.");
+        }
     }
 }
