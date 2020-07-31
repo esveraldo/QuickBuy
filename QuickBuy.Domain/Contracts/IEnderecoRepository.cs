@@ -5,7 +5,7 @@ using System.Text;
 
 namespace QuickBuy.Domain.Contracts
 {
-    public interface IEnderecoRepository
+    public interface IEnderecoRepository : IBaseRepository<Endereco>
     {
     }
 }

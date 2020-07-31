@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QuickBuy.Domain.Entities
 {
-    class Endereco : Entidade
+    public class Endereco : Entidade
     {
         public int Id { get; set; }
         public string Cep { get; set; }
