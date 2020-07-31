@@ -11,7 +11,14 @@ namespace QuickBuy.Repository.Config
     {
         public void Configure(EntityTypeBuilder<Endereco> builder)
         {
-            throw new NotImplementedException();
+            builder.HasKey(e => e.Id);
+
+            builder.Property(e => e.Cep).IsRequired().HasMaxLength(20);
+            builder.Property(e => e.EnderecoCompleto).IsRequired();
+            builder.Property(e => e.NumeroEndereco).IsRequired();
+            builder.Property(e => e.Bairro).IsRequired();
+            builder.Property(e => e.Cidade).IsRequired();
+            builder.Property(e => e.Estado).IsRequired();
         }
     }
 }

@@ -13,8 +13,6 @@ namespace QuickBuy.Domain.Entities
         public string Bairro { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
-        public int PedidoId { get; set; }
-        public Pedido Pedido { get; set; }
 
         public override void Validate()
         {
