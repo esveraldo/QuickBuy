@@ -13,16 +13,15 @@ namespace QuickBuy.Repository.Config
         {
             builder.HasKey(p => p.Id);
 
-            builder.Property(p => p.ItensPedido).IsRequired();
+            builder.Property(p => p.DataPedido).IsRequired();
+            builder.Property(p => p.DataPrivisaoEntrega).IsRequired();
             builder.Property(p => p.UsuarioId).IsRequired();
-
             builder.HasOne(u => u.Usuario);
-
-            builder.HasMany(i => i.ItensPedido).WithOne(p => p.Pedido);
-
             builder.HasOne(f => f.FormaPagamento);
-
             builder.HasOne(e => e.Endereco);
+            builder.HasOne(p => p.FormaPagamento);
+
+            builder.HasMany(p => p.ItensPedido).WithOne(i =>i.Pedido);
         }
     }
 }

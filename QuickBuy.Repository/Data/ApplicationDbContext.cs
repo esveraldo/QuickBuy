@@ -10,7 +10,7 @@ namespace QuickBuy.Repository.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        public ApplicationDbContext()
         {
 
         }
@@ -22,8 +22,17 @@ namespace QuickBuy.Repository.Data
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<FormaPagamento> FormaPagamentos { get; set; }
 
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+
+        }
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder options)
+        //    => options.UseSqlServer("Data Source=quickbuydb");
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
             modelBuilder.ApplyConfiguration(new EnderecoConfiguration());
             modelBuilder.ApplyConfiguration(new FormaPagamentoConfiguration());

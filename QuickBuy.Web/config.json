@@ -1,4 +1,5 @@
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Database=quickbuy;Trusted_Connection=False;MultipleActiveResultSets=true;user id=sa;password=quick123"
+    "DefaultConnection": "Server=localhost;Database=quickbuydb;Trusted_Connection=False;MultipleActiveResultSets=true;user id=sa;password=esve6140",
   }
+}

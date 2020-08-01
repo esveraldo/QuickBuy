@@ -16,7 +16,6 @@ namespace QuickBuy.Repository.Config
             builder.Property(i => i.ProdutoId).IsRequired();
             builder.Property(i => i.Quantidade).IsRequired();
 
-            builder.HasOne(p => p.Produto);
         }
     }
 }

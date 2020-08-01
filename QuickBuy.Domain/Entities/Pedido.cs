@@ -1,6 +1,7 @@
 ﻿using QuickBuy.Domain.Entities.Helpers;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
@@ -13,11 +14,12 @@ namespace QuickBuy.Domain.Entities
         public int UsuarioId { get; set; }
         public virtual Usuario Usuario { get; set; }
         public DateTime DataPrivisaoEntrega { get; set; }
-        public virtual ICollection<ItemPedido> ItensPedido { get; set; }
         public int FormaPagamentoId { get; set; }
         public virtual FormaPagamento FormaPagamento { get; set; }
         public int EnderecoId { get; set; }
         public virtual Endereco Endereco { get; set; }
+
+        public virtual ICollection<ItemPedido> ItensPedido { get; set; }
 
         public override void Validate()
         {
