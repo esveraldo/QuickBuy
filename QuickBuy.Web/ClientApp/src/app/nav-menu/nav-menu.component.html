@@ -32,9 +32,16 @@
                 <span class='glyphicon glyphicon-th-list'></span> Produto
               </a>
             </li>
-            <li [routerLinkActive]='["link-active"]'>
+
+            <li [routerLinkActive]='["link-active"]' *ngIf="!usuarioLogado()">
               <a [routerLink]='["/entrar"]' (click)='collapse()'>
                 <span class='glyphicon glyphicon-th-list'></span> Entrar
+              </a>
+            </li>
+
+            <li [routerLinkActive]='[""]' *ngIf="usuarioLogado()">
+              <a [routerLink]='[""]' (click)='sair()'>
+                <span class='glyphicon glyphicon-th-list'></span> Sair
               </a>
             </li>
           </ul>

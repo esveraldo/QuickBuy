@@ -38,8 +38,16 @@
           <input type="checkbox" value="remember-me"> Lembre me
         </label>
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="entrar()">Entrar</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="entrar()" [disabled]="ativar_spinner">
+        Entrar
+      </button>
     </form>
+    <div class="alert alert-danger" *ngIf="mensagem">
+      {{ mensagem }}
+    </div>
+    <div class="container-loader">
+      <div class="loader" *ngIf="ativar_spinner"></div>
+    </div>
     <img src="../../../assets/images/quick-b-logo.jpg" />
 
     <div class="alert alert-success" *ngIf="usuarioAutenticado">Usuário autenticado.</div>
